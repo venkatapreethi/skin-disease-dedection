@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skin AI</title>
+<style>
+body {
+    font-family: 'Segoe UI';
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+}
+.container {
+    margin-top: 100px;
+}
+.upload-box {
+    border: 2px dashed white;
+    padding: 30px;
+    width: 300px;
+    margin: auto;
+    border-radius: 15px;
+}
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #00c6ff;
+    color: black;
+    cursor: pointer;
+}
+img {
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>🧠 Skin Disease Detection</h1>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <div class="upload-box">
+            <input type="file" name="image" onchange="previewImage(event)" required>
+            <br>
+            <img id="preview" src="" />
+        </div>
+        <button type="submit">Predict</button>
+    </form>
+</div>
+
+<script>
+function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function(){
+        const output = document.getElementById('preview');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
+</body>
+</html>

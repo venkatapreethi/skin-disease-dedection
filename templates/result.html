@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+<style>
+body {
+    font-family: 'Segoe UI';
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    text-align: center;
+    color: white;
+}
+.card {
+    margin-top: 100px;
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.3);
+}
+img {
+    width: 200px;
+    border-radius: 15px;
+}
+a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    background: #11998e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Prediction Result</h2>
+
+    <img src="{{ image_path }}" alt="Uploaded Image">
+
+    <h1>{{ prediction }}</h1>
+    <h3>Confidence: {{ confidence }}%</h3>
+
+    <a href="/">Try Another</a>
+</div>
+
+</body>
+</html>
